@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+
+     #Dockerhub mongo
+  mongo:
+    image: mongo
+    deploy:
+      restart_policy:
+        condition: on-failure 
+    ports:
+        - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+     #Python ocs
+  ericsson-ocs-microservice:
+    image: jenkins.digitata.com/sim-ericsson-ocs:latest
+    deploy:
+      restart_policy: 
+        condition: on-failure
+    ports:
+        - 10010:10010
+    networks:
+      default:
+        aliases:
+          - ericsson-ocs
+
+networks:
+  default:
+    name: vaitom
+
+
