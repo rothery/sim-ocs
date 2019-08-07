@@ -14,7 +14,7 @@ Build and Execute
 ```
 docker image build -t sim-ericsson-ocs .
 
-docker container run -it --name <name of sim> --network="host" sim-ericsson-ocs
+docker container run -i sim-ericsson-ocs 
 
 ```
 

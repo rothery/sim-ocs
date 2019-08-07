@@ -25,10 +25,10 @@ services:
     networks:
       default:
         aliases:
-          - ericsson-ocs
+          - net
 
 networks:
   default:
-    name: vaitom
+    name: net
 
 
